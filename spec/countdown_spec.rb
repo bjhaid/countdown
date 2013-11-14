@@ -44,4 +44,15 @@ describe Countdown do
     expect(eval(solution)).to eq(target)
     puts  "solves a complex game: #{solution}"
   end
+
+  it "should create a list of numbers that includes parenthesis" do
+    target = 999
+    chosen_numbers = [100,2,7,4,3]
+    game = Countdown.new(target, chosen_numbers)
+    new_numbers = game.group_in_2s_and_surround_with_parenthesis
+    expect(new_numbers.join("").include?(")")).to be_true
+    puts "New numbers generated: #{new_numbers}"
+  end
+
+  it "should generate arrays that includes the operators"
 end
